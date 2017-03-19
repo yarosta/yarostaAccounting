@@ -2,7 +2,7 @@ import QtQuick 2.0
 import Menu 1.0
 import Content 1.0
 
-Rectangle {
+Item {
     id:root
     width: 1000
     height: 700
