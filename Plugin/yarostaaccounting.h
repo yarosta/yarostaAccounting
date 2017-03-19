@@ -15,13 +15,13 @@ class yarostaAccounting : public QQuickItem
 public:
 
     enum ApplicationState {
-        noneSelected = 0,
-        companySelected,
-        contractorsSelected,
-        eventsSelected,
-        documentsSelected,
-        paymentsSelected,
-        accountingSelected
+        NoneSelected = 0,
+        CompanySelected,
+        ContractorsSelected,
+        EventsSelected,
+        DocumentsSelected,
+        PaymentsSelected,
+        AccountingSelected
      };
 
     yarostaAccounting(QQuickItem *parent = 0);

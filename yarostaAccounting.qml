@@ -12,6 +12,7 @@ Item {
 
     MainMenu {
         id: menu
+        state: applicationState
     }
     MainContent {
         id: content

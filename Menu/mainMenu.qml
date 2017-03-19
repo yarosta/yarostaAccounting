@@ -2,30 +2,11 @@ import QtQuick 2.0
 
 Rectangle {
     id: root
-    property int applicationState: parent.applicationState
     anchors.left: parent.left
     anchors.bottom: parent.bottom
     width:230
     height:parent.height
     color: "#4A4A4A"    
-    state: {
-        switch (applicationState) {
-        case 0:
-            return "noneSelected";
-        case 1:
-            return "companySelected";
-        case 2:
-            return "contractorsSelected";
-        case 3:
-            return "eventsSelected";
-        case 4:
-            return "documentsSelected";
-        case 5:
-            return "paymentsSelected";
-        case 6:
-            return "accountingSelected";
-        }
-    }
 
     Column {
         anchors.top: parent.top
@@ -40,10 +21,10 @@ Rectangle {
                 text: "Firma"
                 onClicked: {
                     if (state === "selected") {
-                        setApplicationState(0);
+                        setApplicationState("noneSelected");
                     } else {
-                        setApplicationState(0);
-                        setApplicationState(1);
+                        setApplicationState("noneSelected");
+                        setApplicationState("companySelected");
                     }
                 }
             }
@@ -54,10 +35,10 @@ Rectangle {
                 text: "Kontrahenci"
                 onClicked: {
                     if (state === "selected") {
-                        setApplicationState(0);
+                        setApplicationState("noneSelected");
                     } else {
-                        setApplicationState(0);
-                        setApplicationState(2);
+                        setApplicationState("noneSelected");
+                        setApplicationState("contractorsSelected");
                     }
                 }
             }
@@ -68,10 +49,10 @@ Rectangle {
                 text: "Zdarzenia gosp."
                 onClicked: {
                     if (state === "selected") {
-                        setApplicationState(0);
+                        setApplicationState("noneSelected");
                     } else {
-                        setApplicationState(0);
-                        setApplicationState(3);
+                        setApplicationState("noneSelected");
+                        setApplicationState("eventsSelected");
                     }
                 }
             }
@@ -82,10 +63,10 @@ Rectangle {
                 text: "Dokumenty"
                 onClicked: {
                     if (state === "selected") {
-                        setApplicationState(0);
+                        setApplicationState("noneSelected");
                     } else {
-                        setApplicationState(0);
-                        setApplicationState(4);
+                        setApplicationState("noneSelected");
+                        setApplicationState("documentsSelected");
                     }
                 }
             }
@@ -96,10 +77,10 @@ Rectangle {
                 text: "Płatności"
                 onClicked: {
                     if (state === "selected") {
-                        setApplicationState(0);
+                        setApplicationState("noneSelected");
                     } else {
-                        setApplicationState(0);
-                        setApplicationState(5);
+                        setApplicationState("noneSelected");
+                        setApplicationState("paymentsSelected");
                     }
                 }
             }
@@ -110,10 +91,10 @@ Rectangle {
                 text: "Księgowość"
                 onClicked: {
                     if (state === "selected") {
-                        setApplicationState(0);
+                        setApplicationState("noneSelected");
                     } else {
-                        setApplicationState(0);
-                        setApplicationState(6);
+                        setApplicationState("noneSelected");
+                        setApplicationState("accountingSelected");
                     }
                 }
             }
