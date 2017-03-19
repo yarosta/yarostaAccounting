@@ -5,14 +5,18 @@
 *.qmlproject.user
 *.pro.user
 
-#moc files
-moc*
+#qmlc files
+*.qmlc
 
-#object files
-*.o
+#qmake files
+moc*
+*.qmake.stash
 
 #Make files
 Makefile
+
+#object files
+*.o
 
 #temporary files
 *~
