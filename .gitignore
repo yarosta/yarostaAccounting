@@ -1,0 +1,20 @@
+#bin files (shared library)
+*.so
+
+#user files
+*.qmlproject.user
+*.pro.user
+
+#moc files
+moc*
+
+#object files
+*.o
+
+#Make files
+Makefile
+
+#temporary files
+*~
+
+

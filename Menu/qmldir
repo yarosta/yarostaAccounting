@@ -1,0 +1,4 @@
+module Menu
+MainMenu 1.0 mainMenu.qml
+internal MenuItem menuItem.qml
+
