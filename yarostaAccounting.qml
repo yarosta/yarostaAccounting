@@ -16,6 +16,7 @@ Item {
     }
     MainContent {
         id: content
+        state: applicationState
     }
     BackendWrapper {
         id: backendWrapper

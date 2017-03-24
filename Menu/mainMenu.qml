@@ -3,7 +3,7 @@ import QtQuick 2.0
 Rectangle {
     id: root
     anchors.left: parent.left
-    anchors.bottom: parent.bottom
+    anchors.top: parent.top
     width:230
     height:parent.height
     color: "#4A4A4A"    
