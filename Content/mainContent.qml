@@ -20,23 +20,63 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         height: parent.height
         width: parent.width
-        source: {
-            switch (applicationState) {
-            case "noneSelected":
-                return "";
-            case "companySelected":
-                return "companyContent.qml";
-            case "contractorsSelected":
-                return "contractorsContent.qml";
-            case "eventsSelected":
-                return "eventsContent.qml";
-            case "documentsSelected":
-                return "documentsContent.qml";
-            case "paymentsSelected":
-                return "paymentsContent.qml";
-            case "accountingSelected":
-                return "accountingContent.qml";
+
+    }
+    states: [
+        State {
+            name: "noneSelected"
+            PropertyChanges {
+                target: contentLoader
+                source: ""
+            }
+        },
+
+        State {
+            name: "companySelected"
+            PropertyChanges {
+                target: contentLoader
+                source: "companyContent.qml"
+            }
+        },
+
+        State {
+            name: "contractorsSelected"
+            PropertyChanges {
+                target: contentLoader
+                source: "contractorsContent.qml"
+            }
+        },
+
+        State {
+            name: "eventsSelected"
+            PropertyChanges {
+                target: contentLoader
+                source: "eventsContent.qml"
+            }
+        },
+
+        State {
+            name: "documentsSelected"
+            PropertyChanges {
+                target: contentLoader
+                source: "documentsContent.qml"
+            }
+        },
+
+        State {
+            name: "paymentsSelected"
+            PropertyChanges {
+                target: contentLoader
+                source: "paymentsContent.qml"
+            }
+        },
+
+        State {
+            name: "accountingSelected"
+            PropertyChanges {
+                target: contentLoader
+                source: "accountingContent.qml"
             }
         }
-    }
+    ]
 }
