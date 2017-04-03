@@ -5,7 +5,7 @@ Rectangle {
     anchors.horizontalCenter: parent.horizontalCenter
     anchors.top: parent.top
     width: parent.width
-    height: 130
+    height: 136
     color: "#4A4A4A"
 
     property alias viewTitle: title.text

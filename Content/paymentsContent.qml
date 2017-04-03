@@ -4,6 +4,6 @@ Item {
     id: root
 
     ContentView {
-        viewTitle: "Moje płatności"
+        viewTitle: "Płatności"
     }
 }
