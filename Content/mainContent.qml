@@ -20,8 +20,9 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         height: parent.height
         width: parent.width
-
+        opacity: 1
     }
+
     states: [
         State {
             name: "noneSelected"
@@ -76,6 +77,16 @@ Item {
             PropertyChanges {
                 target: contentLoader
                 source: "accountingContent.qml"
+            }
+        }
+    ]
+
+    transitions: [
+        Transition {
+            PropertyAnimation {
+                target: contentLoader
+                properties: "source"
+                duration: 160
             }
         }
     ]

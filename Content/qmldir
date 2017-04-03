@@ -1,2 +1,3 @@
 module Content
 MainContent 1.0 mainContent.qml
+internal ContentView contentView.qml
