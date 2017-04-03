@@ -5,5 +5,9 @@ Item {
 
     ContentView {
         viewTitle: "Dokumenty"
+        //wszystkie
+        //wychodzace
+        //przychodzace
+        //wewnetrzne
     }
 }

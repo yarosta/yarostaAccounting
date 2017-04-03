@@ -5,5 +5,7 @@ Item {
 
     ContentView {
         viewTitle: "Płatności"
+        //Wszyscy
+        //Dodaj kontrahenta
     }
 }

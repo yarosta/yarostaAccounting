@@ -5,5 +5,7 @@ Item {
 
     ContentView {
         viewTitle: "Kontrahenci"
+        //Wszyscy
+        //Dodaj kontrahenta
     }
 }

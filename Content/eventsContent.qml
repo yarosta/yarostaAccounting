@@ -5,5 +5,12 @@ Item {
 
     ContentView {
         viewTitle: "Zdarzenia gospodarcze"
+        //wszystkie
+        //sprzedaż
+        //zakup towarów
+        //wynagrodzenia
+        //wydatki
+        //ubezpieczenia społeczne
+        //podatek dochodowy
     }
 }
