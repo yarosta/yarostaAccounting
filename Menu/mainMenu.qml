@@ -9,11 +9,14 @@ Rectangle {
     color: "#4A4A4A"    
 
     Column {
+        id: column
         anchors.top: parent.top
         width: parent.width
         height: parent.height
         anchors.margins: 8
         spacing: 8
+
+        readonly property int anchorsMarginsExpanded: 124
 
             MenuItem {
                 id: company
@@ -143,6 +146,10 @@ Rectangle {
                 target: contractors
                 state: "selected"
             }
+            PropertyChanges {
+                target: column
+                anchors.margins: anchorsMarginsExpanded
+            }
         },
 
         State {
@@ -150,6 +157,10 @@ Rectangle {
             PropertyChanges {
                 target: events
                 state: "selected"
+            }
+            PropertyChanges {
+                target: column
+                anchors.margins: anchorsMarginsExpanded
             }
         },
 
@@ -159,6 +170,10 @@ Rectangle {
                 target: documents
                 state: "selected"
             }
+            PropertyChanges {
+                target: column
+                anchors.margins: anchorsMarginsExpanded
+            }
         },
 
         State {
@@ -166,6 +181,10 @@ Rectangle {
             PropertyChanges {
                 target: payments
                 state: "selected"
+            }
+            PropertyChanges {
+                target: column
+                anchors.margins: anchorsMarginsExpanded
             }
         },
 
@@ -176,5 +195,16 @@ Rectangle {
                 state: "selected"
             }
         }
+    ]
+
+    transitions: [
+        Transition {
+            PropertyAnimation {
+                target: column
+                properties: "anchors.margins"
+                duration: 160
+            }
+        }
+
     ]
 }

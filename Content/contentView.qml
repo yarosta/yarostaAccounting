@@ -5,7 +5,7 @@ Rectangle {
     anchors.horizontalCenter: parent.horizontalCenter
     anchors.top: parent.top
     width: parent.width
-    height: 136
+    height: 116
     color: "#4A4A4A"
 
     property alias viewTitle: title.text
@@ -17,5 +17,5 @@ Rectangle {
         font.pointSize: 18
         font.family: "Ubuntu"
         color: "white"
-    }
+    }    
 }
