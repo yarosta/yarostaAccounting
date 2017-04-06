@@ -6,21 +6,13 @@ Item {
     ContentView {
         id: contentView
         viewTitle: "Kontrahenci"
-        //Wszyscy
-        //Dodaj kontrahenta
     }
-    Row {
-        anchors.bottom: contentView.bottom
-        anchors.horizontalCenter: contentView.horizontalCenter
-        width: contentView.width - 16
-        height: 36
-        anchors.margins: 4
-        spacing: 30
-        ContentItem {
+    RowOfContentsButtons {
+        ContentButton {
             id: all
             text: "Wszyscy .."
         }
-        ContentItem {
+        ContentButton {
             id: add
             text: "Dodaj .."
         }

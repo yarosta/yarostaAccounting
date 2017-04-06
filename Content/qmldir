@@ -1,4 +1,6 @@
 module Content
 MainContent 1.0 mainContent.qml
 internal ContentView contentView.qml
-internal ContentItem contentItem.qml
+internal ContentButton contentButton.qml
+internal RowOfContentsButtons rowOfContentsButtons.qml
+internal RowOfContentsSpecificButtons rowOfContentsSpecificButtons.qml

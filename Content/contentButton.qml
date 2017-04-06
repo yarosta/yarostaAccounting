@@ -6,7 +6,7 @@ Rectangle {
     state: "notSelected"
     signal clicked
     anchors.verticalCenter: parent.verticalCenter
-    width: 90
+    width: 110
     height: parent.height
     color: "#1D81D8"
     radius: 3.75
