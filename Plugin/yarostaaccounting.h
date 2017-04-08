@@ -9,6 +9,10 @@ class yarostaAccounting : public QQuickItem
     Q_DISABLE_COPY(yarostaAccounting)
 
     Q_ENUMS(ApplicationState)
+    Q_ENUMS(ContractorsState)
+    Q_ENUMS(EventsState)
+    Q_ENUMS(DocumentsState)
+    Q_ENUMS(PaymentsState)
 
     Q_PROPERTY(ApplicationState applicationState READ applicationState WRITE setApplicationState NOTIFY applicationStateChanged)
 
@@ -23,6 +27,29 @@ public:
         PaymentsSelected,
         AccountingSelected
      };
+
+    enum ContractorsState {
+        AllContractorsSelected = 0
+    };
+
+    enum EventsState {
+        AllEventsSelected = 0,
+        SaleSelected,
+        BuyingGoodsSelected,
+        PaySelected,
+        ExpensesSelected
+    };
+
+    enum DocumentsState {
+        AllDocumentsSeleceted = 0,
+        OutgoingSelected,
+        IncomingSelected,
+        InternalSelected
+    };
+
+    enum PaymentsState {
+        AllPaymentsSelected = 0
+    };
 
     yarostaAccounting(QQuickItem *parent = 0);
     ~yarostaAccounting();
