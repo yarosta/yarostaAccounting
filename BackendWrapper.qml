@@ -105,4 +105,65 @@ Item {
         }
         backend.setApplicationState(applicationState);
     }
+
+    function changeContractorsContentState(contractorsState) {
+        var contractorsContentState;
+        switch (contractorsState) {
+        case "allContractorsSelected":
+            contractorsContentState = Backend.AllContractorsSelected;
+            break;
+        }
+        backend.setContractorsState(contractorsContentState);
+    }
+
+    function changeEventsContentState(eventsState) {
+        var eventsContentState;
+        switch (eventsState) {
+        case "allEventsSelected":
+            eventsContentState = Backend.AllEventsSelected;
+            break;
+        case "saleSelected":
+            eventsContentState = Backend.SaleSelected;
+            break;
+        case "buyingGoodsSelected":
+            eventsContentState = Backend.BuyingGoodsSelected;
+            break;
+        case "paySelected":
+            eventsContentState = Backend.PaySelected;
+            break;
+        case "expensesSelected":
+            eventsContentState = Backend.ExpensesSelected;
+            break;
+        }
+        backend.setEventsState(eventsContentState);
+    }
+
+    function changeDocumentsContentState(documentsState) {
+        var documentsContentState;
+        switch (documentsState) {
+        case "allDocumentsSelected":
+            documentsContentState = Backend.AllDocumentsSelected;
+            break;
+        case "outgoingSelected":
+            documentsContentState = Backend.OutgoingSelected;
+            break;
+        case "incomingSelected":
+            documentsContentState = Backend.IncomingSelected;
+            break;
+        case "internalSelected":
+            documentsContentState = Backend.InternalSelected;
+            break;
+        }
+        backend.setDocumentsState(documentsContentState);
+    }
+
+    function changePaymentsContentState(paymentsState) {
+        var paymentsContentState;
+        switch (paymentsState) {
+        case "allPaymentsSelected":
+            paymentsContentState = Backend.AllPaymentsSelected;
+            break;
+        }
+        backend.setPaymentsState(paymentsContentState);
+    }
 }

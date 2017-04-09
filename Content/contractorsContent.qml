@@ -11,6 +11,7 @@ Item {
         ContentButton {
             id: all
             text: "Wszyscy .."
+            onClicked: setContractorsContentState("allContractorsSelected")
         }
         ContentButton {
             id: add

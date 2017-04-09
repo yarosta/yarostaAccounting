@@ -15,19 +15,23 @@ Item {
         ContentButton {
             id: all
             text: "Wszystkie .."
+            onClicked: setDocumentsContentState("allDocumentsSelected")
         }
         RowOfContentsSpecificButtons {
             ContentButton {
                 id: outgoing
                 text: "Wychodzące"
+                onClicked: setDocumentsContentState("outgoingSelected")
             }
             ContentButton {
                 id: incoming
                 text: "Przychodzące"
+                onClicked: setDocumentsContentState("incomingSelected")
             }
             ContentButton {
                 id: internal
                 text: "Wewnętrzne"
+                onClicked: setDocumentsContentState("internalSelected")
             }
         }
         ContentButton {

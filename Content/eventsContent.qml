@@ -18,23 +18,28 @@ Item {
         ContentButton {
             id: all
             text: "Wszystkie .."
+            onClicked: setEventsContentState("allEventsSelected")
         }
         RowOfContentsSpecificButtons {
             ContentButton {
                 id: sale
                 text: "Sprzedaż"
+                onClicked: setEventsContentState("saleSelected")
             }
             ContentButton {
                 id: buyingGoods
                 text: "Zakup towarów"
+                onClicked: setEventsContentState("buyingGoodsSelected")
             }
             ContentButton {
-                id: payments
+                id: pay
                 text: "Wynagrodzenia"
+                onClicked: setEventsContentState("paySelected")
             }
             ContentButton {
                 id: expenses
                 text: "Wydatki"
+                onClicked: setEventsContentState("expensesSelected")
             }
         }
         ContentButton {
@@ -59,7 +64,7 @@ Item {
                 state: "notSelected"
             }
             PropertyChanges {
-                target: payments
+                target: pay
                 state: "notSelected"
             }
             PropertyChanges {
@@ -83,7 +88,7 @@ Item {
                 state: "notSelected"
             }
             PropertyChanges {
-                target: payments
+                target: pay
                 state: "notSelected"
             }
             PropertyChanges {
@@ -107,7 +112,7 @@ Item {
                 state: "selected"
             }
             PropertyChanges {
-                target: payments
+                target: pay
                 state: "notSelected"
             }
             PropertyChanges {
@@ -117,7 +122,7 @@ Item {
         },
 
         State {
-            name: "paymentsSelected"
+            name: "paySelected"
             PropertyChanges {
                 target: all
                 state: "notSelected"
@@ -131,7 +136,7 @@ Item {
                 state: "notSelected"
             }
             PropertyChanges {
-                target: payments
+                target: pay
                 state: "selected"
             }
             PropertyChanges {
@@ -155,7 +160,7 @@ Item {
                 state: "notSelected"
             }
             PropertyChanges {
-                target: payments
+                target: pay
                 state: "notSelected"
             }
             PropertyChanges {

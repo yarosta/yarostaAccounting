@@ -13,6 +13,7 @@ Item {
         ContentButton {
             id: all
             text: "Wszystkie .."
+            onClicked: setPaymentsContentState("allPaymentsSelected")
         }
         ContentButton {
             id: add
