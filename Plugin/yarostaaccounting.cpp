@@ -14,13 +14,57 @@ yarostaAccounting::~yarostaAccounting()
 {
 }
 
+yarostaAccounting::ApplicationState yarostaAccounting::applicationState()
+{
+    return m_applicationState;
+}
+
+yarostaAccounting::ContractorsState yarostaAccounting::contractorsState()
+{
+    return m_contractorsState;
+}
+
+yarostaAccounting::EventsState yarostaAccounting::eventsState()
+{
+    return m_eventsState;
+}
+
+yarostaAccounting::DocumentsState yarostaAccounting::documentsState()
+{
+    return m_documentsState;
+}
+
+yarostaAccounting::PaymentsState yarostaAccounting::paymentsState()
+{
+    return m_paymentsState;
+}
+
 void yarostaAccounting::setApplicationState(ApplicationState applicationState)
 {
     m_applicationState = applicationState;
     emit applicationStateChanged();
 }
 
-yarostaAccounting::ApplicationState yarostaAccounting::applicationState()
+void yarostaAccounting::setContractorsState(ContractorsState contractorsState)
 {
-    return m_applicationState;
+    m_contractorsState = contractorsState;
+    emit contractorsStateChanged();
+}
+
+void yarostaAccounting::setEventsState(EventsState eventsState)
+{
+    m_eventsState = eventsState;
+    emit eventsStateChanged();
+}
+
+void yarostaAccounting::setDocumentsState(DocumentsState documentsState)
+{
+    m_documentsState = documentsState;
+    emit documentsStateChanged();
+}
+
+void yarostaAccounting::setPaymentsState(PaymentsState paymentsState)
+{
+    m_paymentsState = paymentsState;
+    emit paymentsStateChanged();
 }

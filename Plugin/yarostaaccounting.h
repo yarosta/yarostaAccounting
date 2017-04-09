@@ -15,6 +15,10 @@ class yarostaAccounting : public QQuickItem
     Q_ENUMS(PaymentsState)
 
     Q_PROPERTY(ApplicationState applicationState READ applicationState WRITE setApplicationState NOTIFY applicationStateChanged)
+    Q_PROPERTY(ContractorsState contractorsState READ contractorsState WRITE setContractorsState NOTIFY contractorsStateChanged)
+    Q_PROPERTY(EventsState eventsState READ eventsState WRITE setEventsState NOTIFY eventsStateChanged)
+    Q_PROPERTY(DocumentsState documentsState READ documentsState WRITE setDocumentsState NOTIFY documentsStateChanged)
+    Q_PROPERTY(PaymentsState paymentsState READ paymentsState WRITE setPaymentsState NOTIFY paymentsStateChanged)
 
 public:
 
@@ -54,14 +58,31 @@ public:
     yarostaAccounting(QQuickItem *parent = 0);
     ~yarostaAccounting();
 
-    Q_INVOKABLE void setApplicationState(ApplicationState applicationState);
     ApplicationState applicationState();
+    ContractorsState contractorsState();
+    EventsState eventsState();
+    DocumentsState documentsState();
+    PaymentsState paymentsState();
+
+    Q_INVOKABLE void setApplicationState(ApplicationState applicationState);
+    Q_INVOKABLE void setContractorsState(ContractorsState contractorsState);
+    Q_INVOKABLE void setEventsState(EventsState eventsState);
+    Q_INVOKABLE void setDocumentsState(DocumentsState documentsState);
+    Q_INVOKABLE void setPaymentsState(PaymentsState paymentsState);
 
 signals:
     void applicationStateChanged();
+    void contractorsStateChanged();
+    void eventsStateChanged();
+    void documentsStateChanged();
+    void paymentsStateChanged();
 
 private:
     ApplicationState m_applicationState;
+    ContractorsState m_contractorsState;
+    EventsState m_eventsState;
+    DocumentsState m_documentsState;
+    PaymentsState m_paymentsState;
 };
 
 #endif // YAROSTAACCOUNTING_H
