@@ -20,8 +20,6 @@ Rectangle {
 
         readonly property int anchorsMarginsExpanded: 124
 
-        //TODO !!! correct states, describe all states don't invoke all the time noneSelected
-
             MenuItem {
                 id: company
                 iconSource: "../Assets/Icons/company.png"
