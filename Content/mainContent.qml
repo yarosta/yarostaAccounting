@@ -2,6 +2,12 @@ import QtQuick 2.0
 
 Item {
     id: root
+
+    property string contractorsContentState
+    property string eventsContentState
+    property string documentsContentState
+    property string paymentsContentState
+
     anchors.left: parent.left
     anchors.leftMargin: menuWidth
     anchors.top: parent.top
@@ -16,11 +22,25 @@ Item {
 
     Loader {
         id: contentLoader
+
+        property string contentState
+
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
         height: parent.height
         width: parent.width
         opacity: 1
+
+        onLoaded: {
+            contentLoaderBinder.target = contentLoader.item
+        }
+    }
+
+    Binding {
+        id: contentLoaderBinder
+
+        property: "state"
+        value: contentLoader.contentState
     }
 
     states: [
@@ -28,6 +48,7 @@ Item {
             name: "noneSelected"
             PropertyChanges {
                 target: contentLoader
+                contentState: ""
                 source: ""
             }
         },
@@ -36,6 +57,7 @@ Item {
             name: "companySelected"
             PropertyChanges {
                 target: contentLoader
+                contentState: ""
                 source: "companyContent.qml"
             }
         },
@@ -44,6 +66,7 @@ Item {
             name: "contractorsSelected"
             PropertyChanges {
                 target: contentLoader
+                contentState: root.contractorsContentState
                 source: "contractorsContent.qml"
             }
         },
@@ -52,6 +75,7 @@ Item {
             name: "eventsSelected"
             PropertyChanges {
                 target: contentLoader
+                contentState: root.eventsContentState
                 source: "eventsContent.qml"
             }
         },
@@ -60,6 +84,7 @@ Item {
             name: "documentsSelected"
             PropertyChanges {
                 target: contentLoader
+                contentState: root.documentsContentState
                 source: "documentsContent.qml"
             }
         },
@@ -69,6 +94,7 @@ Item {
             PropertyChanges {
                 target: contentLoader
                 source: "paymentsContent.qml"
+                contentState: root.paymentsContentState
             }
         },
 
@@ -76,6 +102,7 @@ Item {
             name: "accountingSelected"
             PropertyChanges {
                 target: contentLoader
+                contentState: ""
                 source: "accountingContent.qml"
             }
         }

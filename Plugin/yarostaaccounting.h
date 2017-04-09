@@ -45,7 +45,7 @@ public:
     };
 
     enum DocumentsState {
-        AllDocumentsSeleceted = 0,
+        AllDocumentsSelected = 0,
         OutgoingSelected,
         IncomingSelected,
         InternalSelected

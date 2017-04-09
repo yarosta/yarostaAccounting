@@ -19,4 +19,14 @@ Item {
             text: "Dodaj .."
         }
     }
+
+    states: [
+        State {
+            name: "allPaymentsSelected"
+            PropertyChanges {
+                target: all
+                state: "selected"
+            }
+        }
+    ]
 }

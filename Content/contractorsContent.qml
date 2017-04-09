@@ -17,4 +17,14 @@ Item {
             text: "Dodaj .."
         }
     }
+
+    states: [
+        State {
+            name: "allContractorsSelected"
+            PropertyChanges {
+                target: all
+                state: "selected"
+            }
+        }
+    ]
 }

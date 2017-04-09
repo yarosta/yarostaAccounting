@@ -1,7 +1,12 @@
 #include "yarostaaccounting.h"
 
 yarostaAccounting::yarostaAccounting(QQuickItem *parent):
-    QQuickItem(parent), m_applicationState(NoneSelected)
+    QQuickItem(parent),
+    m_applicationState(NoneSelected),
+    m_contractorsState(AllContractorsSelected),
+    m_eventsState(AllEventsSelected),
+    m_documentsState(AllDocumentsSelected),
+    m_paymentsState(AllPaymentsSelected)
 {
     // By default, QQuickItem does not draw anything. If you subclass
     // QQuickItem to create a visual item, you will need to uncomment the

@@ -10,6 +10,11 @@ Window {
     height: 700
 
     property alias applicationState: backendWrapper.applicationState
+    property alias contractorsContentState: backendWrapper.contractorsContentState
+    property alias eventsContentState: backendWrapper.eventsContentState
+    property alias documentsContentState: backendWrapper.documentsContentState
+    property alias paymentsContentState: backendWrapper.paymentsContentState
+
     property alias menuWidth: menu.width
 
     MainMenu {
@@ -19,6 +24,10 @@ Window {
     MainContent {
         id: content
         state: applicationState
+        contractorsContentState: root.contractorsContentState
+        eventsContentState: backendWrapper.eventsContentState
+        documentsContentState: backendWrapper.documentsContentState
+        paymentsContentState: backendWrapper.paymentsContentState
     }
     BackendWrapper {
         id: backendWrapper

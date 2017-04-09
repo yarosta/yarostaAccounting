@@ -36,5 +36,39 @@ Rectangle {
         }
     }
 
+    states: [
+        State {
+            name: "selected"
+            PropertyChanges {
+                target: root
+                color: "#FFA415"
+            }
+        }
+    ]
+
+    transitions: [
+        Transition {
+            from: "notSelected"
+            to: "selected"
+
+            ColorAnimation {
+                target: root
+                properties: "color"
+                duration: 100
+            }
+        },
+
+        Transition {
+            from: "selected"
+            to: "notSelected"
+
+            ColorAnimation {
+                target: root
+                properties: "color"
+                duration: 160
+            }
+        }
+
+    ]
 }
 
