@@ -8,6 +8,11 @@ Item {
     property string documentsContentState
     property string paymentsContentState
 
+    signal setContractorsContentState(var contractorsState)
+    signal setEventsContentState(var eventsState)
+    signal setDocumentsContentState(var documentsState)
+    signal setPaymentsContentState(var paymentsState)
+
     anchors.left: parent.left
     anchors.leftMargin: menuWidth
     anchors.top: parent.top
@@ -25,6 +30,8 @@ Item {
 
         property string contentState
 
+        signal setContentState(var contentState)
+
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
         height: parent.height
@@ -32,7 +39,33 @@ Item {
         opacity: 1
 
         onLoaded: {
-            contentLoaderBinder.target = contentLoader.item
+            contentLoaderBinder.target = contentLoader.item;
+            contentLoader.item.setContentState.connect(setContentState)
+        }
+
+        onSetContentState: {
+            switch (root.state) {
+            case "noneSelected":
+                break;
+            case "companySelected":
+                break;
+            case "contractorsSelected":
+                setContractorsContentState(contentState);
+                break;
+            case "eventsSelected":
+                setEventsContentState(contentState);
+                break;
+            case "documentsSelected":
+                setDocumentsContentState(contentState);
+                break;
+            case "paymentsSelected":
+                setPaymentsContentState(contentState);
+                break;
+            case "accountingSelected":
+                break;
+            default:
+                break;
+            }
         }
     }
 

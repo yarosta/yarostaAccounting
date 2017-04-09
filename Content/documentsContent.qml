@@ -3,6 +3,8 @@ import QtQuick 2.0
 Item {
     id: root
 
+    signal setContentState(var contentState)
+
     ContentView {
         id: contentView
         viewTitle: "Dokumenty"
@@ -15,23 +17,23 @@ Item {
         ContentButton {
             id: all
             text: "Wszystkie .."
-            onClicked: setDocumentsContentState("allDocumentsSelected")
+            onClicked: setContentState("allDocumentsSelected")
         }
         RowOfContentsSpecificButtons {
             ContentButton {
                 id: outgoing
                 text: "Wychodzące"
-                onClicked: setDocumentsContentState("outgoingSelected")
+                onClicked: setContentState("outgoingSelected")
             }
             ContentButton {
                 id: incoming
                 text: "Przychodzące"
-                onClicked: setDocumentsContentState("incomingSelected")
+                onClicked: setContentState("incomingSelected")
             }
             ContentButton {
                 id: internal
                 text: "Wewnętrzne"
-                onClicked: setDocumentsContentState("internalSelected")
+                onClicked: setContentState("internalSelected")
             }
         }
         ContentButton {

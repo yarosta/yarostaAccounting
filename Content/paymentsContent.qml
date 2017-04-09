@@ -3,6 +3,8 @@ import QtQuick 2.0
 Item {
     id: root
 
+    signal setContentState(var contentState)
+
     ContentView {
         id: contentView
         viewTitle: "Płatności"
@@ -13,7 +15,7 @@ Item {
         ContentButton {
             id: all
             text: "Wszystkie .."
-            onClicked: setPaymentsContentState("allPaymentsSelected")
+            onClicked: setContentState("allPaymentsSelected")
         }
         ContentButton {
             id: add

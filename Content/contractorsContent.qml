@@ -3,6 +3,8 @@ import QtQuick 2.0
 Item {
     id: root
 
+    signal setContentState(var contentState)
+
     ContentView {
         id: contentView
         viewTitle: "Kontrahenci"
@@ -11,7 +13,7 @@ Item {
         ContentButton {
             id: all
             text: "Wszyscy .."
-            onClicked: setContractorsContentState("allContractorsSelected")
+            onClicked: setContentState("allContractorsSelected")
         }
         ContentButton {
             id: add

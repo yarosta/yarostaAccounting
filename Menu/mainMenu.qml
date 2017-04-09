@@ -6,7 +6,9 @@ Rectangle {
     anchors.top: parent.top
     width:230
     height:parent.height
-    color: "#4A4A4A"    
+    color: "#4A4A4A"
+
+    signal setApplicationState(var appState)
 
     Column {
         id: column

@@ -3,6 +3,8 @@ import QtQuick 2.0
 Item {
     id: root
 
+    signal setContentState(var contentState)
+
     ContentView {
         id: contentView
         viewTitle: "Zdarzenia gospodarcze"
@@ -18,28 +20,28 @@ Item {
         ContentButton {
             id: all
             text: "Wszystkie .."
-            onClicked: setEventsContentState("allEventsSelected")
+            onClicked: setContentState("allEventsSelected")
         }
         RowOfContentsSpecificButtons {
             ContentButton {
                 id: sale
                 text: "Sprzedaż"
-                onClicked: setEventsContentState("saleSelected")
+                onClicked: setContentState("saleSelected")
             }
             ContentButton {
                 id: buyingGoods
                 text: "Zakup towarów"
-                onClicked: setEventsContentState("buyingGoodsSelected")
+                onClicked: setContentState("buyingGoodsSelected")
             }
             ContentButton {
                 id: pay
                 text: "Wynagrodzenia"
-                onClicked: setEventsContentState("paySelected")
+                onClicked: setContentState("paySelected")
             }
             ContentButton {
                 id: expenses
                 text: "Wydatki"
-                onClicked: setEventsContentState("expensesSelected")
+                onClicked: setContentState("expensesSelected")
             }
         }
         ContentButton {
