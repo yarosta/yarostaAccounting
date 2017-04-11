@@ -30,6 +30,10 @@ Item {
         switch (backend.contractorsState) {
         case Backend.AllContractorsSelected:
             return "allContractorsSelected";
+        case Backend.TrustedSelected:
+            return "trustedSelected";
+        case Backend.BlackListedSelected:
+            return "blackListedSelected";
         default:
             return "allContractorsSelected";
         }
@@ -111,6 +115,12 @@ Item {
         switch (contractorsState) {
         case "allContractorsSelected":
             contractorsContentState = Backend.AllContractorsSelected;
+            break;
+        case "trustedSelected":
+            contractorsContentState = Backend.TrustedSelected;
+            break;
+        case "blackListedSelected":
+            contractorsContentState = Backend.BlackListedSelected;
             break;
         }
         backend.setContractorsState(contractorsContentState);

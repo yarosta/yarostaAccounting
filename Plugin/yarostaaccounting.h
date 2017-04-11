@@ -33,7 +33,9 @@ public:
      };
 
     enum ContractorsState {
-        AllContractorsSelected = 0
+        AllContractorsSelected = 0,
+        TrustedSelected,
+        BlackListedSelected
     };
 
     enum EventsState {
