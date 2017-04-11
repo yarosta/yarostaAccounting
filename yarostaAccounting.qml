@@ -37,21 +37,4 @@ Window {
     BackendWrapper {
         id: backendWrapper
     }
-
-/*
-    function setApplicationState(appState) {
-        backendWrapper.changeApplicationState(appState);
-    }
-    function setContractorsContentState(contractorsState) {
-        backendWrapper.changeContractorsContentState(contractorsState);
-    }
-    function setEventsContentState(eventsState) {
-        backendWrapper.changeEventsContentState(eventsState);
-    }
-    function setDocumentsContentState(documentsState) {
-        backendWrapper.changeDocumentsContentState(documentsState);
-    }
-    function setPaymentsContentState(paymentsState) {
-        backendWrapper.changePaymentsContentState(paymentsState);
-    }*/
 }

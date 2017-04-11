@@ -12,7 +12,7 @@ Item {
     RowOfContentsButtons {
         ContentButton {
             id: all
-            text: "Wszyscy .."
+            text: "Wszyscy"
             onClicked: setContentState("allContractorsSelected")
         }
         RowOfContentsSpecificButtons {
@@ -29,7 +29,7 @@ Item {
         }
         ContentButton {
             id: add
-            text: "Dodaj .."
+            text: "Dodaj ..."
         }
     }
 

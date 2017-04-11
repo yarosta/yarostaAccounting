@@ -14,12 +14,12 @@ Item {
     RowOfContentsButtons {
         ContentButton {
             id: all
-            text: "Wszystkie .."
+            text: "Wszystkie"
             onClicked: setContentState("allPaymentsSelected")
         }
         ContentButton {
             id: add
-            text: "Dodaj .."
+            text: "Dodaj ..."
         }
     }
 
