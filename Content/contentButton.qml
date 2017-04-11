@@ -43,6 +43,10 @@ Rectangle {
                 target: root
                 color: "#FFA415"
             }
+            PropertyChanges {
+                target: label
+                color: "black"
+            }
         }
     ]
 
@@ -56,6 +60,13 @@ Rectangle {
                 properties: "color"
                 duration: 100
             }
+
+
+            ColorAnimation {
+                target: label
+                properties: "color"
+                duration: 100
+            }
         },
 
         Transition {
@@ -64,6 +75,12 @@ Rectangle {
 
             ColorAnimation {
                 target: root
+                properties: "color"
+                duration: 160
+            }
+
+            ColorAnimation {
+                target: label
                 properties: "color"
                 duration: 160
             }
