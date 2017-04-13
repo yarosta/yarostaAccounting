@@ -3,12 +3,16 @@ import QtQuick 2.0
 Item {
     id: root
 
+    property int contentHeight
+    property int contentWidth
+
     signal setContentState(var contentState)
 
     ContentView {
         id: contentView
         viewTitle: "Kontrahenci"
     }
+
     RowOfContentsButtons {
         ContentButton {
             id: all
@@ -31,6 +35,18 @@ Item {
             id: add
             text: "Dodaj ..."
         }
+    }
+
+    ListView {
+
+        anchors.top: contentView.bottom
+        anchors.topMargin: (contentHeight - contentView.height) * 0.05
+        anchors.right: contentView.right
+        anchors.rightMargin: contentWidth * 0.05
+
+        height: (contentHeight - contentView.height) * 0.9
+        width: contentWidth * 0.9
+
     }
 
     states: [

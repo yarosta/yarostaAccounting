@@ -29,6 +29,8 @@ Item {
         id: contentLoader
 
         property string contentState
+        property int contentHeight: root.height
+        property int contentWidth: root.width
 
         signal setContentState(var contentState)
 
@@ -40,6 +42,8 @@ Item {
 
         onLoaded: {
             contentLoaderBinder.target = contentLoader.item;
+            contentHeightBinder.target = contentLoader.item;
+            contentWidthBinder.target = contentLoader.item;
             contentLoader.item.setContentState.connect(setContentState)
         }
 
@@ -74,6 +78,20 @@ Item {
 
         property: "state"
         value: contentLoader.contentState
+    }
+
+    Binding {
+        id: contentHeightBinder
+
+        property: "contentHeight"
+        value: contentLoader.contentHeight
+    }
+
+    Binding {
+        id: contentWidthBinder
+
+        property: "contentWidth"
+        value: contentLoader.contentWidth
     }
 
     states: [
