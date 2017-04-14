@@ -83,14 +83,14 @@ Item {
     Binding {
         id: contentHeightBinder
 
-        property: "contentHeight"
+        property: "height"
         value: contentLoader.contentHeight
     }
 
     Binding {
         id: contentWidthBinder
 
-        property: "contentWidth"
+        property: "width"
         value: contentLoader.contentWidth
     }
 
