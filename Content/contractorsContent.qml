@@ -39,12 +39,12 @@ Item {
 
         ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
         ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
-        ListElement {name: "Consult with us your whole life S.A."; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
+        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
         ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
     }
 
     ListView {
-        id: contractorsView
+        id: listView
 
         anchors.top: contentView.bottom
         anchors.topMargin: (root.height - contentView.height) * 0.05
@@ -62,66 +62,8 @@ Item {
 
     Component {
         id: contractorsDelegate
+        ContractorsListViewRow {
 
-        Row {
-            id: contractorsDelegateRow
-
-            height: 22.5
-            width: contractorsView.width
-
-            spacing: width * 0.01
-
-            Rectangle {
-                height: parent.height
-                width: parent.width * 0.08
-                color: "#BECDDA"
-                radius: 3.75
-
-                Text {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.right: parent.right
-                    anchors.rightMargin: 12
-                    font.family: "Ubuntu"
-                    font.pixelSize: 14
-                    color: "#374D61"
-                    text: index + 1 + "."
-
-                }
-            }
-
-            Rectangle {
-                height: parent.height
-                width: parent.width * 0.4
-                color: "#BECDDA"
-                radius: 3.75
-
-                Text {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    anchors.leftMargin: 12
-                    font.family: "Ubuntu"
-                    font.pixelSize: 12
-                    color: "#374D61"
-                    text: name
-                }
-            }
-
-            Rectangle {
-                height: parent.height
-                width: parent.width * 0.4
-                color: "#BECDDA"
-                radius: 3.75
-
-                Text {
-                    anchors.verticalCenter: parent.verticalCenter
-                    anchors.left: parent.left
-                    anchors.leftMargin: 12
-                    font.family: "Ubuntu"
-                    font.pixelSize: 12
-                    color: "#374D61"
-                    text: address
-                }
-            }
         }
     }
 
