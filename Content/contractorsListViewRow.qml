@@ -1,4 +1,5 @@
 import QtQuick 2.0
+import ListViewRow 1.0
 
 Row {
     id: root
