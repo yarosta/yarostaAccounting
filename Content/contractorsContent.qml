@@ -54,10 +54,22 @@ Item {
         height: (root.height - contentView.height) * 0.9
         width: root.width * 0.9
 
+        clip: true
+
         model: contractorsModel
+        header: contractorsHeader
         delegate: contractorsDelegate
 
         spacing: 6
+    }
+
+    Component {
+        id: contractorsHeader
+        ContractorsListViewHeader {
+            id: contractorsListViewHeader
+
+        }
+
     }
 
     Component {

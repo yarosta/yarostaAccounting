@@ -20,12 +20,12 @@ Row {
     }
 
     ContentListViewRowElement {
-        width: parent.width * 0.37
+        width: parent.width * 0.35
         text: address
     }
 
     ContentListViewRowInteractiveElement {
-        width: parent.width * 0.06
+        width: parent.width * 0.08
         text: ""
     }
 
