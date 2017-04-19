@@ -31,11 +31,11 @@ Row {
 
     ContentListViewRowInteractiveElement {
         width: parent.width * 0.08
-        text: "zmień"
+        text: "pokaż"
     }
 
     ContentListViewRowInteractiveElement {
         width: parent.width * 0.085
-        text: "usuń"
+        text: "zmień"
     }
 }

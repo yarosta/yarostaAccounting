@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.5
 
 Item {
     id: root
@@ -41,6 +41,26 @@ Item {
         ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
         ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
         ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
+        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
+        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
+        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
+        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
+        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
+        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
+        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
+        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
+        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
+        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
+        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
+        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
+        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
+        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
+        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
+        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
+        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
+        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
+        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
+        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
     }
 
     ListView {
@@ -51,23 +71,30 @@ Item {
         anchors.right: contentView.right
         anchors.rightMargin: root.width * 0.05
 
-        height: (root.height - contentView.height) * 0.9
+        height: (root.height - contentView.height * 1.46) * 0.9
         width: root.width * 0.9
 
         clip: true
 
         model: contractorsModel
+
         header: contractorsHeader
+        headerPositioning: ListView.OverlayHeader
+
         delegate: contractorsDelegate
 
+        footer: contractorsFooter
+        footerPositioning: ListView.OverlayFooter
+
         spacing: 6
+
+        boundsBehavior: Flickable.StopAtBounds
+        snapMode: ListView.SnapToItem
     }
 
     Component {
         id: contractorsHeader
         ContractorsListViewHeader {
-            id: contractorsListViewHeader
-
         }
 
     }
@@ -75,7 +102,12 @@ Item {
     Component {
         id: contractorsDelegate
         ContractorsListViewRow {
+        }
+    }
 
+    Component {
+        id: contractorsFooter
+        ContractorsListViewFooter {
         }
     }
 

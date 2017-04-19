@@ -38,9 +38,9 @@ Rectangle {
         }
         onEntered:  {
             if (root.state === "notSelected") {
-                cursorShape = Qt.OpenHandCursor
+                cursorShape = Qt.PointingHandCursor
             } else if (root.state === "selected") {
-                cursorShape = Qt.ClosedHandCursor
+                cursorShape = Qt.OpenHandCursor
             }
         }
     }
@@ -65,7 +65,7 @@ Rectangle {
             }
             PropertyChanges {
                 target: mouseArea
-                cursorShape: Qt.ClosedHandCursor
+                cursorShape: Qt.OpenHandCursor
             }
         }
     ]

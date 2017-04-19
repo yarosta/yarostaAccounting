@@ -10,7 +10,7 @@ Item {
     Row {
         id: rowOfElements
 
-        anchors.top: root.top
+        anchors.bottom: root.bottom
 
         height: 22.5
         width: parent.width
@@ -19,17 +19,17 @@ Item {
 
         ContentListViewHeaderOrdinalElement {
             width: parent.width * 0.065
-            text: "L.p."
+            text: ""
         }
 
         ContentListViewHeaderElement {
             width: parent.width * 0.29
-            text: "Nazwa :"
+            text: ""
         }
 
         ContentListViewHeaderElement {
             width: parent.width * 0.35
-            text: "Adres :"
+            text: ""
         }
 
         ContentListViewHeaderInteractiveElement {
@@ -39,12 +39,12 @@ Item {
 
         ContentListViewHeaderInteractiveElement {
             width: parent.width * 0.08
-            text: "pokaż"
+            text: ""
         }
 
         ContentListViewHeaderInteractiveElement {
             width: parent.width * 0.085
-            text: "zmień"
+            text: ""
         }
     }
 }

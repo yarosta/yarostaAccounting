@@ -1,0 +1,4 @@
+module ListViewFooter
+ContentListViewFooterOrdinalElement 1.0 contentListViewFooterOrdinalElement.qml
+ContentListViewFooterElement 1.0 contentListViewFooterElement.qml
+ContentListViewFooterInteractiveElement 1.0 contentListViewFooterInteractiveElement.qml

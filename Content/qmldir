@@ -6,4 +6,5 @@ internal RowOfContentsButtons rowOfContentsButtons.qml
 internal RowOfContentsSpecificButtons rowOfContentsSpecificButtons.qml
 internal ContractorsListViewHeader contractorsListViewHeader.qml
 internal ContractorsListViewRow contractorsListViewRow.qml
+internal ContractorsListViewFooter contractorsListViewFooter.qml
 
