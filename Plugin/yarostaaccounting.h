@@ -2,6 +2,9 @@
 #define YAROSTAACCOUNTING_H
 
 #include <QQuickItem>
+#include <QPointer>
+
+#include "contractorslistmodel.h"
 
 class yarostaAccounting : public QQuickItem
 {
@@ -85,6 +88,8 @@ private:
     EventsState m_eventsState;
     DocumentsState m_documentsState;
     PaymentsState m_paymentsState;
+
+    QPointer<ContractorsListModel> m_contractorsListModel;
 };
 
 #endif // YAROSTAACCOUNTING_H

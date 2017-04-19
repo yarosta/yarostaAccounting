@@ -1,10 +1,11 @@
+#include <qqml.h>
+
 #include "yarostaaccounting_plugin.h"
 #include "yarostaaccounting.h"
-
-#include <qqml.h>
+#include "contractorslistmodel.h"
 
 void YarostaAccountingPlugin::registerTypes(const char *uri)
 {
-    // @uri Backend
     qmlRegisterType<yarostaAccounting>(uri, 1, 0, "Backend");
+    qmlRegisterUncreatableType<ContractorsListModel>(uri, 1, 0, "ContractorsListModel", QString("Contractors List Model"));
 }
