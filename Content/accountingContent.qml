@@ -3,8 +3,7 @@ import QtQuick 2.0
 Item {
     id: root
 
-    property int contentHeight
-    property int contentWidth
+    property var modelList
 
     signal setContentState(var contentState)
 

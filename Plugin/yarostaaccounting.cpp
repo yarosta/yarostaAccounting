@@ -8,40 +8,41 @@ yarostaAccounting::yarostaAccounting(QQuickItem *parent):
     m_documentsState(AllDocumentsSelected),
     m_paymentsState(AllPaymentsSelected)
 {
-    // By default, QQuickItem does not draw anything. If you subclass
-    // QQuickItem to create a visual item, you will need to uncomment the
-    // following line and re-implement updatePaintNode()
-
-    // setFlag(ItemHasContents, true);
+    m_contractorsListModel = QPointer<ContractorsListModel>(new ContractorsListModel());
 }
 
 yarostaAccounting::~yarostaAccounting()
 {
 }
 
-yarostaAccounting::ApplicationState yarostaAccounting::applicationState()
+yarostaAccounting::ApplicationState yarostaAccounting::applicationState() const
 {
     return m_applicationState;
 }
 
-yarostaAccounting::ContractorsState yarostaAccounting::contractorsState()
+yarostaAccounting::ContractorsState yarostaAccounting::contractorsState() const
 {
     return m_contractorsState;
 }
 
-yarostaAccounting::EventsState yarostaAccounting::eventsState()
+yarostaAccounting::EventsState yarostaAccounting::eventsState() const
 {
     return m_eventsState;
 }
 
-yarostaAccounting::DocumentsState yarostaAccounting::documentsState()
+yarostaAccounting::DocumentsState yarostaAccounting::documentsState() const
 {
     return m_documentsState;
 }
 
-yarostaAccounting::PaymentsState yarostaAccounting::paymentsState()
+yarostaAccounting::PaymentsState yarostaAccounting::paymentsState() const
 {
     return m_paymentsState;
+}
+
+QPointer<ContractorsListModel> yarostaAccounting::contractorsList() const
+{
+    return m_contractorsListModel;
 }
 
 void yarostaAccounting::setApplicationState(ApplicationState applicationState)

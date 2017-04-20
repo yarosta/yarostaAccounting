@@ -3,6 +3,8 @@ import QtQuick 2.0
 Item {
     id: root
 
+    property var contractorsList
+
     property string contractorsContentState
     property string eventsContentState
     property string documentsContentState
@@ -28,6 +30,8 @@ Item {
     Loader {
         id: contentLoader
 
+        property var contentListModel
+
         property string contentState
         property int contentHeight: root.height
         property int contentWidth: root.width
@@ -41,7 +45,8 @@ Item {
         opacity: 1
 
         onLoaded: {
-            contentLoaderBinder.target = contentLoader.item;
+            contentModelListBinder.target = contentLoader.item;
+            contentLoaderBinder.target = contentLoader.item;         
             contentHeightBinder.target = contentLoader.item;
             contentWidthBinder.target = contentLoader.item;
             contentLoader.item.setContentState.connect(setContentState)
@@ -73,6 +78,14 @@ Item {
         }
     }
 
+
+    Binding {
+        id: contentModelListBinder
+
+        property: "modelList"
+        value: contentLoader.contentListModel
+    }
+
     Binding {
         id: contentLoaderBinder
 
@@ -99,6 +112,7 @@ Item {
             name: "noneSelected"
             PropertyChanges {
                 target: contentLoader
+                contentListModel: null
                 contentState: ""
                 source: ""
             }
@@ -108,6 +122,7 @@ Item {
             name: "companySelected"
             PropertyChanges {
                 target: contentLoader
+                contentListModel: null
                 contentState: ""
                 source: "companyContent.qml"
             }
@@ -117,6 +132,7 @@ Item {
             name: "contractorsSelected"
             PropertyChanges {
                 target: contentLoader
+                contentListModel: root.contractorsList
                 contentState: root.contractorsContentState
                 source: "contractorsContent.qml"
             }
@@ -126,6 +142,7 @@ Item {
             name: "eventsSelected"
             PropertyChanges {
                 target: contentLoader
+                contentListModel: null
                 contentState: root.eventsContentState
                 source: "eventsContent.qml"
             }
@@ -135,6 +152,7 @@ Item {
             name: "documentsSelected"
             PropertyChanges {
                 target: contentLoader
+                contentListModel: null
                 contentState: root.documentsContentState
                 source: "documentsContent.qml"
             }
@@ -144,8 +162,9 @@ Item {
             name: "paymentsSelected"
             PropertyChanges {
                 target: contentLoader
-                source: "paymentsContent.qml"
+                contentListModel: null
                 contentState: root.paymentsContentState
+                source: "paymentsContent.qml"
             }
         },
 
@@ -153,6 +172,7 @@ Item {
             name: "accountingSelected"
             PropertyChanges {
                 target: contentLoader
+                contentListModel: null
                 contentState: ""
                 source: "accountingContent.qml"
             }
@@ -164,6 +184,11 @@ Item {
             PropertyAnimation {
                 target: contentLoader
                 properties: "source"
+                duration: 160
+            }
+            PropertyAnimation {
+                target: contentLoader
+                properties: "contentListModel"
                 duration: 160
             }
         }

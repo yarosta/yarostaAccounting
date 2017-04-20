@@ -3,6 +3,8 @@ import QtQuick 2.5
 Item {
     id: root
 
+    property var modelList
+
     signal setContentState(var contentState)
 
     ContentView {
@@ -34,35 +36,6 @@ Item {
         }
     }
 
-    ListModel {
-        id: contractorsModel
-
-        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
-        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
-        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
-        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
-        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
-        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
-        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
-        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
-        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
-        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
-        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
-        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
-        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
-        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
-        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
-        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
-        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
-        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
-        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
-        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
-        ListElement {name: "Firma krzak sp. z o.o."; address: "22-100 Chełm, ul. Wojsławicka 22/4"}
-        ListElement {name: "Piramida development sp. z o.o."; address: "58-213 Warszawa, Al. Jerozolimskie 132B"}
-        ListElement {name: "Consult with us your whole life"; address: "18-432 Borusłowice, ul. Krzątaczy 12/12"}
-        ListElement {name: "Your medic"; address: "45-710 Sanok, ul. Płomienna 12/6"}
-    }
-
     ListView {
         id: listView
 
@@ -76,7 +49,7 @@ Item {
 
         clip: true
 
-        model: contractorsModel
+        model: modelList
 
         header: contractorsHeader
         headerPositioning: ListView.OverlayHeader
@@ -96,7 +69,6 @@ Item {
         id: contractorsHeader
         ContractorsListViewHeader {
         }
-
     }
 
     Component {

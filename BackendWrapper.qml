@@ -5,6 +5,9 @@ Item {
     Backend {
         id: backend
     }
+
+    property var contractorsList: backend ? backend.contractorsList : null
+
     property string applicationState: {
         switch (backend.applicationState) {
         case Backend.NoneSelected:

@@ -24,6 +24,8 @@ Window {
 
         state: applicationState
 
+        contractorsList: backendWrapper.contractorsList
+
         contractorsContentState: backendWrapper.contractorsContentState
         eventsContentState: backendWrapper.eventsContentState
         documentsContentState: backendWrapper.documentsContentState

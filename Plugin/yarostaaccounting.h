@@ -23,6 +23,8 @@ class yarostaAccounting : public QQuickItem
     Q_PROPERTY(DocumentsState documentsState READ documentsState WRITE setDocumentsState NOTIFY documentsStateChanged)
     Q_PROPERTY(PaymentsState paymentsState READ paymentsState WRITE setPaymentsState NOTIFY paymentsStateChanged)
 
+    Q_PROPERTY(QPointer<ContractorsListModel> contractorsList READ contractorsList NOTIFY contractorsListChanged)
+
 public:
 
     enum ApplicationState {
@@ -63,11 +65,13 @@ public:
     yarostaAccounting(QQuickItem *parent = 0);
     ~yarostaAccounting();
 
-    ApplicationState applicationState();
-    ContractorsState contractorsState();
-    EventsState eventsState();
-    DocumentsState documentsState();
-    PaymentsState paymentsState();
+    ApplicationState applicationState() const;
+    ContractorsState contractorsState() const;
+    EventsState eventsState() const;
+    DocumentsState documentsState() const;
+    PaymentsState paymentsState() const;
+
+    QPointer<ContractorsListModel> contractorsList() const;
 
     Q_INVOKABLE void setApplicationState(ApplicationState applicationState);
     Q_INVOKABLE void setContractorsState(ContractorsState contractorsState);
@@ -81,6 +85,8 @@ signals:
     void eventsStateChanged();
     void documentsStateChanged();
     void paymentsStateChanged();
+
+    void contractorsListChanged();
 
 private:
     ApplicationState m_applicationState;

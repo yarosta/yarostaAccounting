@@ -16,12 +16,12 @@ Row {
 
     ContentListViewRowElement {
         width: parent.width * 0.29
-        text: name
+        text: model.name
     }
 
     ContentListViewRowElement {
         width: parent.width * 0.35
-        text: address
+        text: model.address
     }
 
     ContentListViewRowInteractiveElement {
