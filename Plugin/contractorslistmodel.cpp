@@ -2,18 +2,30 @@
 
 ContractorsListModel::ContractorsListModel()
 {
-    m_roleNames[ContractorName] = "name";
-    m_roleNames[ContractorAddress] = "address";
+    setRoleNames();
+
+    m_data.append(new Contractor("Consultex","12-430 Radom, ul. Lubelska 34/1","406987095","consultex@eu"));
+    m_data.append(new Contractor("Tele company","32-110 Dęblin, ul. Sawy 3/11","406444095","tele@eu"));
+    m_data.append(new Contractor("Polo S.A.","41-604 Radom, ul. Tarnowska 2/10","408887095","polo@eu"));
+    m_data.append(new Contractor("Kwatera development","11-200 Warszawa, Al. Jerozolimska 2/10","111187095","kwatera@eu"));
+    m_data.append(new Contractor("San usługi transportowe","44-110 Kraków, ul. Polska 12/11","422227095","san@eu"));
 }
 
 QVariant ContractorsListModel::data(const QModelIndex &index, int role) const
 {
-    Q_UNUSED(index);
+    int row = index.row();
+
     if (role == ContractorName) {
-        return QVariant("Firma krzak");
+        return m_data.at(row)->name();
     }
     if (role == ContractorAddress) {
-        return QVariant("53-810 Deblin, ul. Tarnowska 21/2");
+        return m_data.at(row)->address();
+    }
+    if (role == ContractorPhone) {
+        return m_data.at(row)->phone();
+    }
+    if (role == ContractorEmail) {
+        return m_data.at(row)->email();
     }
     return QVariant();
 }
@@ -21,7 +33,15 @@ QVariant ContractorsListModel::data(const QModelIndex &index, int role) const
 int ContractorsListModel::rowCount(const QModelIndex &parent) const
 {
     Q_UNUSED(parent);
-    return 1;
+    return m_data.size();
+}
+
+void ContractorsListModel::setRoleNames()
+{
+    m_roleNames[ContractorName] = "name";
+    m_roleNames[ContractorAddress] = "address";
+    m_roleNames[ContractorPhone] = "phone";
+    m_roleNames[ContractorEmail] = "email";
 }
 
 QHash<int, QByteArray> ContractorsListModel::roleNames() const

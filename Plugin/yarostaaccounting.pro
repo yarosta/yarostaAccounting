@@ -18,12 +18,14 @@ macx:OBJECTS_DIR = ./build/o/mac
 SOURCES += \
     yarostaaccounting_plugin.cpp \
     yarostaaccounting.cpp \
-    contractorslistmodel.cpp
+    contractorslistmodel.cpp \
+    contractor.cpp
 
 HEADERS += \
     yarostaaccounting_plugin.h \
     yarostaaccounting.h \
-    contractorslistmodel.h
+    contractorslistmodel.h \
+    contractor.h
 
 OTHER_FILES = qmldir
 
