@@ -39,6 +39,8 @@ Item {
     ListView {
         id: listView
 
+        property bool highlightHoveredDelegateAvailable: true
+
         anchors.top: contentView.bottom
         anchors.topMargin: (root.height - contentView.height) * 0.05
         anchors.right: contentView.right
@@ -73,8 +75,9 @@ Item {
 
     Component {
         id: contractorsDelegate
-        ContractorsListViewRow {
-        }
+
+            ContractorsListViewRow {
+            }
     }
 
     Component {
