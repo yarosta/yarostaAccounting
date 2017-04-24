@@ -30,7 +30,7 @@ protected:
 
 private:
     QHash<int, QByteArray> m_roleNames;
-    QList<QPointer<Contractor>> m_data;
+    QList<QPointer<Contractor> > m_data;
 };
 
 #endif // CONTRACTORSLISTMODEL_H

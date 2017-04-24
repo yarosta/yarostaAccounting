@@ -3,9 +3,8 @@ import ListViewRow 1.0
 
 Item {
     id: root
-
+    property bool changeHighlightStateAvailable: true
     state: "default"
-
     height: 22.5
     width: parent.width
 
@@ -16,19 +15,25 @@ Item {
     onShowExpandedRow: {
         if (root.state === "default") {
             root.state = "expanded";
+            changeHighlightStateAvailable = false;
         } else if (root.state === "expanded") {
             root.state = "default";
+            changeHighlightStateAvailable = true;
         }
     }
 
     onHighlightRow: {
-        mainRow.highlightRow();
-        expandedRow.highlightRow();
+        if (changeHighlightStateAvailable === true) {
+            mainRow.highlightRow();
+            expandedRow.highlightRow();
+        }
     }
 
     onTurnOffHighlight: {
-        mainRow.turnOffHighlight();
-        expandedRow.turnOffHighlight();
+        if (changeHighlightStateAvailable === true) {
+            mainRow.turnOffHighlight();
+            expandedRow.turnOffHighlight();
+        }
     }
 
     MouseArea {
@@ -58,12 +63,14 @@ Item {
         signal turnOffHighlight
 
         onHighlightRow: {
+            ordinals.state = "highlighted";
             name.state = "highlighted";
             address.state = "highlighted";
             show.state = "highlighted";
         }
 
         onTurnOffHighlight: {
+            ordinals.state = "notHighlighted";
             name.state = "notHighlighted";
             address.state = "notHighlighted";
             show.state = "notHighlighted";
@@ -160,6 +167,10 @@ Item {
                 anchors.topMargin: 6
                 height: 22.5
                 visible: true
+            }
+            PropertyChanges {
+                target: show
+                state: "expanded"
             }
         }
     ]

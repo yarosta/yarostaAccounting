@@ -38,6 +38,17 @@ Rectangle {
                 target: label
                 color: "white"
             }
+        },
+        State {
+            name: "expanded"
+            PropertyChanges {
+                target: root
+                color: "#FFA415"
+            }
+            PropertyChanges {
+                target: label
+                color: "black"
+            }
         }
     ]
 
@@ -60,6 +71,36 @@ Rectangle {
         Transition {
             from: "highlighted"
             to: "notHighlighted"
+            ColorAnimation {
+                target: root
+                property: "color"
+                duration: 160
+            }
+            ColorAnimation {
+                target: label
+                property: "color"
+                duration: 160
+            }
+        },
+
+        Transition {
+            from: "highlighted"
+            to: "expanded"
+            ColorAnimation {
+                target: root
+                property: "color"
+                duration: 160
+            }
+            ColorAnimation {
+                target: label
+                property: "color"
+                duration: 160
+            }
+        },
+
+        Transition {
+            from: "expanded"
+            to: "highlighted"
             ColorAnimation {
                 target: root
                 property: "color"
