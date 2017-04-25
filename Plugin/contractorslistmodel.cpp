@@ -4,26 +4,28 @@ ContractorsListModel::ContractorsListModel()
 {
     setRoleNames();
 
-    m_data.append(new Contractor("Consultex","12-430 Radom, ul. Lubelska 34/1","406987095","consultex@eu"));
-    m_data.append(new Contractor("Tele company","32-110 Dęblin, ul. Sawy 3/11","406444095","tele@eu"));
-    m_data.append(new Contractor("Polo S.A.","41-604 Radom, ul. Tarnowska 2/10","408887095","polo@eu"));
-    m_data.append(new Contractor("Kwatera development","11-200 Warszawa, Al. Jerozolimska 2/10","111187095","kwatera@eu"));
-    m_data.append(new Contractor("San usługi transportowe","44-110 Kraków, ul. Polska 12/11","422227095","san@eu"));
-    m_data.append(new Contractor("Consultex","12-430 Radom, ul. Lubelska 34/1","406987095","consultex@eu"));
-    m_data.append(new Contractor("Tele company","32-110 Dęblin, ul. Sawy 3/11","406444095","tele@eu"));
-    m_data.append(new Contractor("Polo S.A.","41-604 Radom, ul. Tarnowska 2/10","408887095","polo@eu"));
-    m_data.append(new Contractor("Kwatera development","11-200 Warszawa, Al. Jerozolimska 2/10","111187095","kwatera@eu"));
-    m_data.append(new Contractor("San usługi transportowe","44-110 Kraków, ul. Polska 12/11","422227095","san@eu"));
-    m_data.append(new Contractor("Consultex","12-430 Radom, ul. Lubelska 34/1","406987095","consultex@eu"));
-    m_data.append(new Contractor("Tele company","32-110 Dęblin, ul. Sawy 3/11","406444095","tele@eu"));
-    m_data.append(new Contractor("Polo S.A.","41-604 Radom, ul. Tarnowska 2/10","408887095","polo@eu"));
-    m_data.append(new Contractor("Kwatera development","11-200 Warszawa, Al. Jerozolimska 2/10","111187095","kwatera@eu"));
-    m_data.append(new Contractor("San usługi transportowe","44-110 Kraków, ul. Polska 12/11","422227095","san@eu"));
-    m_data.append(new Contractor("Consultex","12-430 Radom, ul. Lubelska 34/1","406987095","consultex@eu"));
-    m_data.append(new Contractor("Tele company","32-110 Dęblin, ul. Sawy 3/11","406444095","tele@eu"));
-    m_data.append(new Contractor("Polo S.A.","41-604 Radom, ul. Tarnowska 2/10","408887095","polo@eu"));
-    m_data.append(new Contractor("Kwatera development","11-200 Warszawa, Al. Jerozolimska 2/10","111187095","kwatera@eu"));
-    m_data.append(new Contractor("San usługi transportowe","44-110 Kraków, ul. Polska 12/11","422227095","san@eu"));
+    m_storageData.append(new Contractor("Consultex","12-430 Radom, ul. Lubelska 34/1","406987095","consultex@eu"));
+    m_storageData.append(new Contractor("Tele company","32-110 Dęblin, ul. Sawy 3/11","406444095","tele@eu"));
+    m_storageData.append(new Contractor("Polo S.A.","41-604 Radom, ul. Tarnowska 2/10","408887095","polo@eu"));
+    m_storageData.append(new Contractor("Kwatera development","11-200 Warszawa, Al. Jerozolimska 2/10","111187095","kwatera@eu"));
+    m_storageData.append(new Contractor("San usługi transportowe","44-110 Kraków, ul. Polska 12/11","422227095","san@eu"));
+    m_storageData.append(new Contractor("Consultex","12-430 Radom, ul. Lubelska 34/1","406987095","consultex@eu"));
+    m_storageData.append(new Contractor("Tele company","32-110 Dęblin, ul. Sawy 3/11","406444095","tele@eu"));
+    m_storageData.append(new Contractor("Polo S.A.","41-604 Radom, ul. Tarnowska 2/10","408887095","polo@eu"));
+    m_storageData.append(new Contractor("Kwatera development","11-200 Warszawa, Al. Jerozolimska 2/10","111187095","kwatera@eu"));
+    m_storageData.append(new Contractor("San usługi transportowe","44-110 Kraków, ul. Polska 12/11","422227095","san@eu"));
+    m_storageData.append(new Contractor("Consultex","12-430 Radom, ul. Lubelska 34/1","406987095","consultex@eu"));
+    m_storageData.append(new Contractor("Tele company","32-110 Dęblin, ul. Sawy 3/11","406444095","tele@eu"));
+    m_storageData.append(new Contractor("Polo S.A.","41-604 Radom, ul. Tarnowska 2/10","408887095","polo@eu"));
+    m_storageData.append(new Contractor("Kwatera development","11-200 Warszawa, Al. Jerozolimska 2/10","111187095","kwatera@eu"));
+    m_storageData.append(new Contractor("San usługi transportowe","44-110 Kraków, ul. Polska 12/11","422227095","san@eu"));
+    m_storageData.append(new Contractor("Consultex","12-430 Radom, ul. Lubelska 34/1","406987095","consultex@eu"));
+    m_storageData.append(new Contractor("Tele company","32-110 Dęblin, ul. Sawy 3/11","406444095","tele@eu"));
+    m_storageData.append(new Contractor("Polo S.A.","41-604 Radom, ul. Tarnowska 2/10","408887095","polo@eu"));
+    m_storageData.append(new Contractor("Kwatera development","11-200 Warszawa, Al. Jerozolimska 2/10","111187095","kwatera@eu"));
+    m_storageData.append(new Contractor("San usługi transportowe","44-110 Kraków, ul. Polska 12/11","422227095","san@eu"));
+
+    filter();
 }
 
 QVariant ContractorsListModel::data(const QModelIndex &index, int role) const
@@ -57,6 +59,15 @@ void ContractorsListModel::setRoleNames()
     m_roleNames[ContractorAddress] = "address";
     m_roleNames[ContractorPhone] = "phone";
     m_roleNames[ContractorEmail] = "email";
+}
+
+void ContractorsListModel::filter()
+{
+    m_data.clear();
+    int storageSize = m_storageData.size();
+    for (int i=0; i<storageSize; ++i) {
+        m_data.append(m_storageData.at(i));
+    }
 }
 
 QHash<int, QByteArray> ContractorsListModel::roleNames() const
