@@ -1,6 +1,8 @@
 #include "contractorslistmodel.h"
+#include <QDebug>
 
-ContractorsListModel::ContractorsListModel()
+ContractorsListModel::ContractorsListModel() :
+    m_contractorsState(utils::AllContractorsSelected)
 {
     setRoleNames();
 
@@ -53,12 +55,22 @@ int ContractorsListModel::rowCount(const QModelIndex &parent) const
     return m_data.size();
 }
 
+utils::ContractorsState ContractorsListModel::contractorsState() const
+{
+    return m_contractorsState;
+}
+
 void ContractorsListModel::setRoleNames()
 {
     m_roleNames[ContractorName] = "name";
     m_roleNames[ContractorAddress] = "address";
     m_roleNames[ContractorPhone] = "phone";
     m_roleNames[ContractorEmail] = "email";
+}
+
+void ContractorsListModel::setContractorsState(utils::ContractorsState contractorsState)
+{
+    m_contractorsState = contractorsState;
 }
 
 void ContractorsListModel::filter()

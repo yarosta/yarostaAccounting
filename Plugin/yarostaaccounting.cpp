@@ -3,7 +3,6 @@
 yarostaAccounting::yarostaAccounting(QQuickItem *parent):
     QQuickItem(parent),
     m_applicationState(NoneSelected),
-    m_contractorsState(AllContractorsSelected),
     m_eventsState(AllEventsSelected),
     m_documentsState(AllDocumentsSelected),
     m_paymentsState(AllPaymentsSelected)
@@ -22,7 +21,17 @@ yarostaAccounting::ApplicationState yarostaAccounting::applicationState() const
 
 yarostaAccounting::ContractorsState yarostaAccounting::contractorsState() const
 {
-    return m_contractorsState;
+    utils::ContractorsState contractorsListModelState = m_contractorsListModel -> contractorsState();
+    switch(contractorsListModelState) {
+    case utils::AllContractorsSelected:
+        return yarostaAccounting::AllContractorsSelected;
+    case utils::TrustedSelected:
+        return yarostaAccounting::TrustedSelected;
+    case utils::BlackListedSelected:
+        return yarostaAccounting::BlackListedSelected;
+    default:
+        return yarostaAccounting::AllContractorsSelected;
+    }
 }
 
 yarostaAccounting::EventsState yarostaAccounting::eventsState() const
@@ -51,9 +60,24 @@ void yarostaAccounting::setApplicationState(ApplicationState applicationState)
     emit applicationStateChanged();
 }
 
-void yarostaAccounting::setContractorsState(ContractorsState contractorsState)
+void yarostaAccounting::setContractorsState(yarostaAccounting::ContractorsState contractorsState)
 {
-    m_contractorsState = contractorsState;
+    utils::ContractorsState contractorsListModelState;
+    switch(contractorsState) {
+    case yarostaAccounting::AllContractorsSelected:
+        contractorsListModelState = utils::AllContractorsSelected;
+        break;
+    case yarostaAccounting::TrustedSelected:
+        contractorsListModelState = utils::TrustedSelected;
+        break;
+    case yarostaAccounting::BlackListedSelected:
+        contractorsListModelState = utils::BlackListedSelected;
+        break;
+    default:
+        contractorsListModelState = utils::AllContractorsSelected;
+        break;
+    }
+    m_contractorsListModel -> setContractorsState(contractorsListModelState);
     emit contractorsStateChanged();
 }
 

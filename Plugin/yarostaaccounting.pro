@@ -25,7 +25,8 @@ HEADERS += \
     yarostaaccounting_plugin.h \
     yarostaaccounting.h \
     contractorslistmodel.h \
-    contractor.h
+    contractor.h \
+    utils.h
 
 OTHER_FILES = qmldir
 

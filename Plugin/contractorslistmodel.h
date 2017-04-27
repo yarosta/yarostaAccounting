@@ -4,13 +4,12 @@
 #include <QAbstractListModel>
 #include <QPointer>
 
+#include "utils.h"
 #include "contractor.h"
 
 class ContractorsListModel : public QAbstractListModel
 {
 Q_OBJECT
-
-    //Q_PROPERTY(ContractorsState State READ paymentsState WRITE setPaymentsState NOTIFY paymentsStateChanged)
 
 public:
     enum RoleNames {
@@ -24,8 +23,10 @@ public:
 
     QVariant data(const QModelIndex &index, int role) const;
     int rowCount(const QModelIndex &parent) const;
+    utils::ContractorsState contractorsState() const;
 
     void setRoleNames();
+    void setContractorsState(utils::ContractorsState contractorsState);
 
     void filter();
 
@@ -37,6 +38,8 @@ private:
 
     QList<QPointer<Contractor> > m_data;
     QList<QPointer<Contractor> > m_storageData;
+
+    utils::ContractorsState m_contractorsState;
 };
 
 #endif // CONTRACTORSLISTMODEL_H

@@ -90,7 +90,7 @@ signals:
 
 private:
     ApplicationState m_applicationState;
-    ContractorsState m_contractorsState;
+
     EventsState m_eventsState;
     DocumentsState m_documentsState;
     PaymentsState m_paymentsState;
