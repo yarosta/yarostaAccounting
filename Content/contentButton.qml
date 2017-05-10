@@ -17,7 +17,7 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         color: "white"
         font.family: "Ubuntu"
-        font.pixelSize: 16
+        font.pixelSize: 14
     }
 
     MouseArea {
