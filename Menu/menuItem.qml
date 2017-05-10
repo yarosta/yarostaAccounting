@@ -26,7 +26,7 @@ Rectangle {
         x: parent.x + parent.width*0.1
         color: "white"
         font.family: "Ubuntu"
-        font.pixelSize: 16
+        font.pixelSize: 18
     }
 
     MouseArea {

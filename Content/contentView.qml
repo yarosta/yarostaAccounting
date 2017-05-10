@@ -14,7 +14,8 @@ Rectangle {
         id: title
         anchors.horizontalCenter: parent.horizontalCenter
         y: parent.height / 3.6 - font.pointSize / 2
-        font.pointSize: 18
+        font.pointSize: 20
+        font.bold: true
         font.family: "Ubuntu"
         color: "white"
     }    

@@ -3,7 +3,7 @@ import ListViewHeader 1.0
 
 Item {
     id: root
-    height: 28.5
+    height: 33.5
     width: parent.width
     z: 10
 
@@ -12,7 +12,7 @@ Item {
 
         anchors.top: root.top
 
-        height: 22.5
+        height: 27.5
         width: parent.width
 
         spacing: width * 0.01

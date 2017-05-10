@@ -6,6 +6,7 @@ Item {
     property var contractorsList
 
     property string contractorsContentState
+
     property string eventsContentState
     property string documentsContentState
     property string paymentsContentState
@@ -33,6 +34,7 @@ Item {
         property var contentListModel
 
         property string contentState
+
         property int contentHeight: root.height
         property int contentWidth: root.width
 
@@ -45,8 +47,8 @@ Item {
         opacity: 1
 
         onLoaded: {
+            contentLoaderBinder.target = contentLoader.item;
             contentModelListBinder.target = contentLoader.item;
-            contentLoaderBinder.target = contentLoader.item;         
             contentHeightBinder.target = contentLoader.item;
             contentWidthBinder.target = contentLoader.item;
             contentLoader.item.setContentState.connect(setContentState)
@@ -77,7 +79,6 @@ Item {
             }
         }
     }
-
 
     Binding {
         id: contentModelListBinder
@@ -180,17 +181,12 @@ Item {
     ]
 
     transitions: [
-        Transition {
+        /*Transition {
             PropertyAnimation {
                 target: contentLoader
                 properties: "source"
                 duration: 160
             }
-            PropertyAnimation {
-                target: contentLoader
-                properties: "contentListModel"
-                duration: 160
-            }
-        }
+        }*/
     ]
 }

@@ -5,7 +5,7 @@ Item {
     id: root
     property bool changeHighlightStateAvailable: true
     state: "default"
-    height: 22.5
+    height: 27.5
     width: parent.width
 
     signal showExpandedRow
@@ -54,7 +54,7 @@ Item {
     Row {
         id: mainRow
 
-        height: 22.5
+        height: 27.5
         width: parent.width
 
         spacing: width * 0.01
@@ -160,12 +160,12 @@ Item {
             name: "expanded"
             PropertyChanges {
                 target: root
-                height: 51
+                height: 57
             }
             PropertyChanges {
                 target: expandedRow
-                anchors.topMargin: 6
-                height: 22.5
+                anchors.topMargin: 2
+                height: 27.5
                 visible: true
             }
             PropertyChanges {

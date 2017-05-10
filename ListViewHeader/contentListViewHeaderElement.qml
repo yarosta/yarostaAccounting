@@ -15,7 +15,8 @@ Rectangle {
         anchors.left: parent.left
         anchors.leftMargin: 12
         font.family: "Ubuntu"
-        font.pixelSize: 12
+        font.pixelSize: 14
+        font.bold: true
         color: "#BECDDA"
         text: root.text
     }

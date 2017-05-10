@@ -44,7 +44,7 @@ Item {
         anchors.right: contentView.right
         anchors.rightMargin: root.width * 0.05
 
-        height: (root.height - contentView.height * 1.46) * 0.9
+        height: (root.height - contentView.height * 1.485) * 0.9
         width: root.width * 0.9
 
         clip: true
@@ -59,7 +59,7 @@ Item {
         footer: contractorsFooter
         footerPositioning: ListView.OverlayFooter
 
-        spacing: 6
+        spacing: 2
 
         boundsBehavior: Flickable.StopAtBounds
         snapMode: ListView.SnapToItem

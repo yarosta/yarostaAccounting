@@ -17,7 +17,7 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         color: "white"
         font.family: "Ubuntu"
-        font.pixelSize: 14
+        font.pixelSize: 16
     }
 
     MouseArea {
@@ -46,6 +46,7 @@ Rectangle {
             PropertyChanges {
                 target: label
                 color: "black"
+                font.bold: true
             }
         }
     ]
@@ -67,6 +68,12 @@ Rectangle {
                 properties: "color"
                 duration: 100
             }
+
+            PropertyAnimation {
+                target: label
+                properties: "font.bold"
+                duration: 100
+            }
         },
 
         Transition {
@@ -82,6 +89,12 @@ Rectangle {
             ColorAnimation {
                 target: label
                 properties: "color"
+                duration: 160
+            }
+
+            PropertyAnimation {
+                target: label
+                properties: "font.bold"
                 duration: 160
             }
         }
